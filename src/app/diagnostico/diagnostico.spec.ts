@@ -14,6 +14,17 @@ describe ('Pruebas unitarias', () => {
 
     })
 
+    it('IMC = 26 - Peso normal', () => {
+
+        //Act
+        let res = "";
+        //Arrange
+        res = validar_diagnostico(22);
+        //Assert
+        expect(res).toBe("Peso normal");
+
+    })
+
     it('IMC=28.1 - Sobrepeso', () => {
 
         //Act
