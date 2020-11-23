@@ -5,4 +5,4 @@ export function calcular_imc(peso, altura) {
     return imc;
 }
 
-//resolved
+//resolved 
