@@ -1,6 +1,8 @@
 export function validar_diagnostico(imc) {
+    //Act
     let res = "";
     
+    //Arrange
     if (imc < 18.5) {
         res = "Bajo peso";
     } else if (imc >= 18.5 && imc <= 24.9) {
@@ -14,6 +16,6 @@ export function validar_diagnostico(imc) {
     } else if (imc >= 40) {
         res = "Obesidad de tercer grado";
     }
-
+    //Asert
     return res;
 }
