@@ -1,0 +1,102 @@
+<div class="container">
+
+    <div class="">
+        <h1>Calculadora IMC</h1>
+    </div>
+
+    <div class="col-md-2 col-md-offset-4">
+
+        <form action="" class="form">
+
+            <div class="input-group form-group">
+                <span class="input-group-addon" id="basic-addon1">Altura</span>
+                <input class="form-control" name="altura" [(ngModel)]="altura" placeholder="Metros" type="number"
+                    id="altura">
+            </div>
+
+            <div class="input-group form-group">
+                <span class="input-group-addon" id="basic-addon2">Peso</span>
+                <input type="number" class="form-control" name="peso" [(ngModel)]="peso" placeholder="Kg" id="peso">
+            </div>
+
+            <div class="input-group form-group">
+                <span class="input-group-addon" id="basic-addon1">Edad</span>
+                <input class="form-control" placeholder="Años" name="edad" [(ngModel)]="edad" type="number" id="edad">
+            </div>
+
+            <div class="input-group form-group">
+                <input type="radio" name="genero" id="genero" value="femenino" [(ngModel)]="genero">Femenino
+
+            </div>
+
+            <div class="input-group form-group">
+                <input type="radio" name="genero" id="genero" value="masculino" [(ngModel)]="genero">Masculino
+            </div>
+
+            <div class="input-group form-group">
+                <input class="btn btn-primary" type="button" value="Calcular" id="calcular" name="calcular"
+                    (click)="calcular_imc()">
+            </div>
+
+        </form>
+
+    </div>
+
+    <div *ngIf="tabla_diag" id="tabla" class="col-lg-12 table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <td>IMC</td>
+                    <td>Edad</td>
+                    <td>Peso</td>
+                    <td>Altura</td>
+                    <td>Diagnostico</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> <span class="imc"> {{ imc.toFixed(1) }} </span> </td>
+                    <td> <span class="edad"> {{ edad }} </span> </td>
+                    <td> <span class="peso"> {{ peso }} </span> </td>
+                    <td> <span class="altura"> {{ altura }} </span> </td>
+                    <td> <span class="diagnostico"> {{ diagnostico }} </span> </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div *ngIf="tabla_diag" class="table-responsive col-lg-12">
+        <h3>Tabla de IMC</h3>
+        <table class="table table-bordered table-hover">
+            <tbody>
+                <tr class="peligro3">
+                    <td>Bajo peso</td>
+                    <td>Menor o igual que 18.4</td>
+                </tr>
+                <tr class="normal">
+                    <td>Normal</td>
+                    <td>Entre 18.5 y 24.9</td>
+                </tr>
+                <tr class="advertencia">
+                    <td>Sobrepeso</td>
+                    <td>Entre 25 y 29.9</td>
+                </tr>
+                <tr class="peligro1">
+                    <td>Obesidad de primer grado</td>
+                    <td>Entre 30 y 34.9</td>
+                </tr>
+                <tr class="peligro2">
+                    <td>Obesidad de segundo grado</td>
+                    <td>Entre 35 y 39.9</td>
+                </tr>
+                <tr class="peligro3">
+                    <td>Obesidad de tercer grado</td>
+                    <td>Mayor de 40</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+</div>
