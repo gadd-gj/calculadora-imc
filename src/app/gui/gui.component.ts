@@ -12,13 +12,13 @@ import { validar_diagnostico } from "../diagnostico/diagnostico";
 })
 export class GuiComponent implements OnInit {
 
-  genero = null;
-  edad = null;
   altura = null;
   peso = null;
+  edad = null;
+  genero = null;
   imc = 0;
-  tabla_diag = false;
-  tabla_ad = false;
+  result = null;
+  mostrar_diag = false;
   diagnostico = "";
 
   constructor() { }
@@ -26,44 +26,32 @@ export class GuiComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  validar_genero(){
-    let resultado=null;
-    resultado = validar_genero(this.genero);
-    this.genero=resultado;
-  }
-
   validar_edad(){
-    let resultado=null;
-    resultado = validar_edad(this.edad);
-    this.edad=resultado;
+    let mi_res = null;
+    mi_res = validar_edad(this.peso);
+    this.edad = mi_res;
   }
 
-  calcular_imc(){
-    let resultado = 0;
-    resultado = calcular_imc(this.peso,this.altura);
-    this.mostrar_tabla();
-    this.imc = resultado;
+  btn_calcular(){
+    let mi_res = null;
+    mi_res = calcular_imc(this.peso,this.altura);
+    this.validar_genero();
     this.validar_diagnostico();
-  }
-
-  mostrar_tabla(){
-    
-    this.tabla_diag = true;
-    
-  }
-
-  mostrar_tabla_ad(){
-
-    this.edad = validar_edad(this.edad);
-    if (this.edad == false) {
-      this.tabla_ad = true;
-    }
+    this.imc = mi_res;
+    this.mostrar_diag = true;
   }
 
   validar_diagnostico(){
-    let resultado = null;
-    resultado = validar_diagnostico(this.imc);
-    this.diagnostico = resultado;
+    let mi_res = null;
+    mi_res = validar_diagnostico(this.imc);
+    this.diagnostico = mi_res;
   }
+
+  validar_genero(){
+    let mi_res = null;
+    mi_res = validar_genero(this.genero);
+    this.genero = mi_res;
+  }
+
 
 }
