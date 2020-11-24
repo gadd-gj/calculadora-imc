@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
+_podras ver acá todo la base para la creación del proyecto de la calculadora IMC._
+* [Documento de Requisitos](https://github.com/gadd-gj/documentacion-imc) Mockups adjuntos.
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
