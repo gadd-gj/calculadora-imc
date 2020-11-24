@@ -4,7 +4,7 @@ import { calcular_imc } from "./formulaMujer";
 describe('Pruebas unitarias imc mujer', () => {
 
     it('Peso=50kg altura=1.50m el imc debe ser igual a 22.2', () => {
-        //
+        //Arrange
         let res = 0;
         //Act
         res = calcular_imc(50, 1.50);
@@ -14,7 +14,7 @@ describe('Pruebas unitarias imc mujer', () => {
     })
 
     it('Peso=50kg altura=1.56m el imc debe ser igual a 20.5', () => {
-        //
+        //Arrange
         let res = 0;
         //Act
         res = calcular_imc(50, 1.56);
@@ -25,7 +25,7 @@ describe('Pruebas unitarias imc mujer', () => {
     })
 
     it('Peso=85kg altura=1.65m el imc debe ser igual a 31.2', () => {
-        //
+        //Arrange
         let res = 0;
         //Act
         res = calcular_imc(85, 1.65);
@@ -36,7 +36,7 @@ describe('Pruebas unitarias imc mujer', () => {
     })
 
     it('Peso=46kg altura=1.62m el imc debe ser igual 17.5', () => {
-        //
+        //Arrange
         let res = 0;
         //Act
         res = calcular_imc(46, 1.62);
@@ -47,7 +47,7 @@ describe('Pruebas unitarias imc mujer', () => {
     })
 
     it('Peso=40.80kg altura=1.62m el imc debe ser igual 15.5', () => {
-        //
+        //Arrange
         let res = 0;
         //Act
         res = calcular_imc(40.80, 1.62);
