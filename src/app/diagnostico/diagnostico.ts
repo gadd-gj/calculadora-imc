@@ -13,7 +13,7 @@ export function validar_diagnostico(imc) {
         res = "Obesidad de primer grado";
     } else if (imc >= 35 && imc <=39.9) {
         res = "Obesidad de segundo grado";
-    } else if (imc >= 40) {
+    } else {
         res = "Obesidad de tercer grado";
     }
     //Asert
