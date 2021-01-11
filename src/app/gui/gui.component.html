@@ -6,43 +6,42 @@
 
     <div class="col-md-2 col-md-offset-4">
 
-        <form action="" class="form">
+        <form class="form">
 
             <div class="input-group form-group">
                 <span class="input-group-addon" id="basic-addon1">Altura</span>
-                <input class="form-control" name="altura" [(ngModel)]="altura" placeholder="Metros" type="number"
+                <input class="form-control" [(ngModel)]="altura" name="altura" placeholder="Metros" type="number"
                     id="altura">
             </div>
 
             <div class="input-group form-group">
                 <span class="input-group-addon" id="basic-addon2">Peso</span>
-                <input type="number" class="form-control" name="peso" [(ngModel)]="peso" placeholder="Kg" id="peso">
+                <input type="number" class="form-control" [(ngModel)]="peso" name="peso" placeholder="Kg" id="peso">
             </div>
 
             <div class="input-group form-group">
                 <span class="input-group-addon" id="basic-addon1">Edad</span>
-                <input class="form-control" placeholder="Años" name="edad" [(ngModel)]="edad" type="number" id="edad">
+                <input class="form-control" [(ngModel)]="edad" placeholder="Años" name="edad"  type="number" id="edad">
             </div>
 
             <div class="input-group form-group">
-                <input type="radio" name="genero" id="genero" value="femenino" [(ngModel)]="genero">Femenino
+                <input type="radio" [(ngModel)]="genero" name="genero" id="genero" value="femenino">Femenino
 
             </div>
 
             <div class="input-group form-group">
-                <input type="radio" name="genero" id="genero" value="masculino" [(ngModel)]="genero">Masculino
+                <input type="radio" [(ngModel)]="genero" name="genero" id="genero" value="masculino">Masculino
             </div>
 
             <div class="input-group form-group">
-                <input class="btn btn-primary" type="button" value="Calcular" id="calcular" name="calcular"
-                    (click)="calcular_imc()">
+                <input class="btn btn-primary" (click)="btn_calcular()" type="button" value="Calcular" id="calcular" name="calcular" >
             </div>
 
         </form>
 
     </div>
 
-    <div *ngIf="tabla_diag" id="tabla" class="col-lg-12 table-responsive">
+    <div *ngIf="mostrar_diag" id="tabla" class="col-lg-12 table-responsive">
         <table class="table table-bordered table-hover">
             <thead>
                 <tr>
@@ -66,7 +65,7 @@
     </div>
 
 
-    <div *ngIf="tabla_diag" class="table-responsive col-lg-12">
+    <div *ngIf="mostrar_diag" class="table-responsive col-lg-12">
         <h3>Tabla de IMC</h3>
         <table class="table table-bordered table-hover">
             <tbody>
