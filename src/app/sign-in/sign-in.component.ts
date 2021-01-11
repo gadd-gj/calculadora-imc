@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-
 import { UsuarioModel } from '../models/user.model';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';
 import Swal from 'sweetalert2';
-
 
 @Component({
   selector: 'app-sign-in',
@@ -13,7 +11,6 @@ import Swal from 'sweetalert2';
   styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent implements OnInit {
-
 
   usuario: UsuarioModel = new UsuarioModel();
 
@@ -49,4 +46,4 @@ export class SignInComponent implements OnInit {
 
   }
 
-
+}
