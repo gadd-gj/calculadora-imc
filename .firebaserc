@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "calculadora-imc-gajo"
+    "default": "imcs-a2003",
+    "calculadora": "imcs-a2003"
   }
 }
