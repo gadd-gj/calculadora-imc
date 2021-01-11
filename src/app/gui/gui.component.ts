@@ -3,7 +3,9 @@ import { validar_genero } from "../validarGenero/validarGenero";
 import { validar_edad } from "../validarEdad/validarEdad";
 import { calcular_imc } from "../formula/formula";
 import { validar_diagnostico } from "../diagnostico/diagnostico";
-
+import { AuthService } from '../service/auth.service';
+import { Router } from '@angular/router';
+import { ImcModel } from '../models/imcs.model';
 
 @Component({
   selector: 'app-gui',
@@ -11,6 +13,10 @@ import { validar_diagnostico } from "../diagnostico/diagnostico";
   styleUrls: ['./gui.component.css']
 })
 export class GuiComponent implements OnInit {
+
+  imcs:ImcModel = new ImcModel();  
+  myDate = new Date();
+  arrImcs = [];
 
   altura = null;
   peso = null;
@@ -21,7 +27,9 @@ export class GuiComponent implements OnInit {
   mostrar_diag = false;
   diagnostico = "";
 
-  constructor() { }
+  constructor(private auth: AuthService, private router: Router) {
+    this.getImc();
+  }
 
   ngOnInit(): void {
   }
@@ -53,5 +61,29 @@ export class GuiComponent implements OnInit {
     this.genero = mi_res;
   }
 
+  insertar(){
+    this.mostrar_diag = true;
+    let resul = null;
+    resul = calcular_imc(this.peso, this.altura);
+    this.validar_diagnostico();
+    this.imc = resul;
+    this.imcs.idUser = Number(localStorage.getItem('ident'));
+    this.imcs.resultado = String(this.imc.toFixed(1));
+    this.imcs.fecha = `${this.myDate.getDate()}/${this.myDate.getMonth()+1}/${this.myDate.getFullYear()} ${this.myDate.getHours()}:${this.myDate.getMinutes()}`;
+    this.auth.insertImc(this.imcs).subscribe( resp =>{
+      resp;
+    });
+  }
+
+  getImc(){
+    this.auth.getImcs(localStorage.getItem('ident')).subscribe((imcRes: any)=>{
+       this.arrImcs = imcRes;
+    });
+   }
+
+  exit(){
+    this.auth.logout();
+    this.router.navigateByUrl('/login');
+  }
 
 }
