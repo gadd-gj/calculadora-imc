@@ -1,0 +1,34 @@
+<div class="col-lg-8" id="hero">
+    <div class="col-md-offset-4">
+        <div class="">
+            <h2 class="text-center">SignIn</h2>
+            <form class="text-center" (ngSubmit)="onSubmit(f)" #f="ngForm">
+                <div class="form-group">
+                    <span *ngIf="f.submitted && f.controls['name'].errors" class="text-danger">El Nombre requiere minimo
+                        de 10 caracteres</span>
+                    <input type="text" id="name" class="form-control text-center" required placeholder="Nombre"
+                        name="name" [(ngModel)]="usuario.name">
+                </div>
+                <div class="form-group">
+                    <span *ngIf="f.submitted && f.controls['email'].errors" class="text-danger">El correo es
+                        Obligatorio</span>
+                    <input type="email" id="email" class="form-control text-center" required
+                        placeholder="Correo eléctronico" name="email" [(ngModel)]="usuario.email">
+                </div>
+                <div class="form-group">
+                    <span *ngIf="f.submitted && f.controls['password'].errors" class="text-danger">La Contraseña es
+                        Obligatoria</span>
+                    <input type="password" id="password" class="form-control text-center" placeholder="Contraseña"
+                        required name="password" [(ngModel)]="usuario.password">
+                </div>
+
+                <input type="submit" class="btn btn-success" value="SignIn">
+
+                <div>
+                    <p>¿Ya tienes cuenta? <a routerLink="/login">Inicia Sesión</a></p>
+                </div>
+               
+            </form>
+        </div>
+    </div>
+</div>
