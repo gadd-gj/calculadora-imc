@@ -4,8 +4,9 @@ export function validar_edad(edad) {
 
     if (edad < 20) {
         res = true;
-    } else if(edad => 20){
+    } else {
         res = false;
     }
+   
     return res;
 }
