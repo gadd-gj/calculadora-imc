@@ -73,6 +73,7 @@ export class GuiComponent implements OnInit {
     this.auth.insertImc(this.imcs).subscribe( resp =>{
       resp;
     });
+    this.router.navigateByUrl('/gui');
   }
 
   getImc(){

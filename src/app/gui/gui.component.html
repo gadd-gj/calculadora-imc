@@ -115,11 +115,10 @@
         </div>
 
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6 col-md-offset-2">
                 <div class="">
-                    <div class="" *ngIf="mostrar_diag">
+                    <div class="" >
                         <h2 class="text-center">IMC Guardados</h2>
-                        <hr>
                         <table class="table table-bordered table-hover text-center">
                             <thead class="">
                                 <tr class="bg-light text-dark">
@@ -129,7 +128,7 @@
                             </thead>
                             <tbody>
                                 <tr *ngFor="let res of arrImcs">
-                                    <th>{{ res.fecha}}</th>
+                                    <th>{{ res.fecha }}</th>
                                     <td>{{ res.resultado }}</td>
                                 </tr>
 
