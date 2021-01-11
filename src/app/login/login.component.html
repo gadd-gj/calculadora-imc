@@ -1,1 +1,25 @@
-<p>login works!</p>
+<div class="col-md-8" id="">
+    <div class="col-md-offset-4">
+        <div class="card-body">
+            <h2 class="titulo text-center">Login</h2>
+            <form class="text-center" (ngSubmit)="login(for)" #for="ngForm">
+                <div class="form-group">
+                    <span *ngIf="for.submitted && for.controls['email'].errors" class="text-danger animated fadeIn">El correo es obligatorio</span>
+                    <input type="email" id="email" name="email" class="form-control text-center" required placeholder="Correo Eléctronico" [(ngModel)]="usuario.email">
+                </div>
+                <div class="form-group">
+                    <span *ngIf="for.submitted && for.controls['password'].errors" class="text-danger animated fadeIn">La contraseña es obligatorio</span>
+                    <input type="password"
+                    required id="password" name="password" class="form-control text-center" placeholder="Contraseña" [(ngModel)]="usuario.password">
+                </div>
+
+                <input type="submit" class="btn btn-success" value="Login">
+                
+                <div>
+                    <p>¿Aún no tienes cuenta? <a routerLink="/sign-in">Registrate</a></p>
+                </div>
+               
+            </form>
+        </div>
+    </div>
+</div>
